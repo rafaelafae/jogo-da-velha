@@ -1,18 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/display.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/display.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <link rel="icon" type="image/png" href="/img/icons8-jogo-da-velha-80.png">
+
+    <title>Jogo da velha</title>
+
 </head>
 
 <body>
 
+    <header class="footer">
+
+        <p class="font__tittle">JOGO DA VELHA</P>
+
+    </header>
+
+    <div class="board" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+
+    <div class="endgame-message" data-endgame-message>
+        <p class="endgame font__subtittle" data-endgame-message-text></p>
+        <button class="restart__button font__tittle" data-endgame-button>Reiniciar</button>
+    </div>
+
+    <footer class="footer">
+
+        <p class="font__tittle">Desenvolvido por Rafaela Faé Theodoro</P>
+
+    </footer>
 
     <script src="/script.js"></script>
 </body>

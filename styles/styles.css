@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-title: "Balsamiq Sans", sans-serif;
+  --font-subtitle: "DM Sans", sans-serif;
+  --font-text: "Montserrat", sans-serif;
+  font-size: 62.5%;
+  --color_box2: #39afdb;
+  --color_box3: #9adff8;
+  --color_box5: #dfc6f6;
+  --color_box6: #ffbee5;
+  --color_box8: #ffffff;
+  --color_box11: #40dfaf;
+  --color_font: #212a3e;
+}
+
+.font__tittle {
+  font-family: var(--font-title);
+  font-size: 2.6rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color_font);
+  line-height: 3.5rem;
+}
+
+.font__subtittle {
+  font-family: var(--font-subtitle);
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color_font);
+}
+
+.font__text {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 2rem;
+  color: var(--color_font);
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color_box5) 0%,
+    var(--color_box6) 30%,
+    var(--color_box3) 60%,
+    var(--color_box2) 100%
+  );
+}
+
+/* QUADRO JOGO DA VELHA */
+.board {
+  width: 100%;
+  height: 100%;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* CÉLULAS */
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--color_box8);
+  position: relative;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+
+/* X */
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  height: calc(100px * 0.15);
+  width: calc(100px * 0.9);
+  background: var(--color_box8);
+  position: absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+/* CIRCLE */
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  height: calc(100px * 0.55);
+  width: calc(100px * 0.55);
+  border: solid 13px var(--color_box8);
+  border-radius: 100%;
+  position: absolute;
+}
+
+/* RODAPÉ */
+.footer {
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--color_box5) 100%,
+    var(--color_box6) 60%,
+    var(--color_box3) 30%,
+    var(--color_box2) 0%
+  );
+}
+
+/* TELA FIM DE JOGO */
+.endgame-message {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.endgame {
+  color: var(--color_box8);
+  padding: 20px;
+  line-height: 2.5rem;
+}
+
+.restart__button {
+  background-color: var(--color_box11);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  color: var(--color_box8);
+}
+
+.restart__button:hover {
+  color: var(--color_box11);
+  background-color: var(--color_box8);
+}
+
+@media (max-width: 350px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* X */
+  .cell.x::before,
+  .cell.x::after,
+  .board.x .cell:not(.x):not(.circle):hover::before,
+  .board.x .cell:not(.x):not(.circle):hover::after {
+    height: calc(80px * 0.15);
+    width: calc(80px * 0.9);
+  }
+
+  /* CIRCLE */
+  .cell.circle::before,
+  .cell.circle::after,
+  .board.circle .cell:not(.x):not(.circle):hover::before,
+  .board.circle .cell:not(.x):not(.circle):hover::after {
+    height: calc(80px * 0.55);
+    width: calc(80px * 0.55);
+  }
+}
