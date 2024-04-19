@@ -2,9 +2,9 @@
 
 Este repositório contém o código fonte de um jogo da velha desenvolvido utilizando as linguagens HTML, CSS e JavaScript. O website apresenta uma interface amigável e responsiva.
 
-[Demo do projeto]()
+[Demo do projeto](https://jogo-da-velha-two-phi.vercel.app/)
 
-![Capa projeto]()
+![Capa projeto](https://github.com/rafaelafae/jogo-da-velha/blob/main/img/Capa_web_jogo-da-velha.png)
 
 ## Tecnologias Utilizadas:
 
